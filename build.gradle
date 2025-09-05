@@ -1,27 +1,35 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.library'
+}
 
-buildscript {
-    repositories {
-        jcenter()
-        google()
-        mavenCentral()
+android {
+    compileSdkVersion 36
+    namespace 'lab.galaxy.yahfa'
+    defaultConfig {
+        minSdkVersion 28
+        targetSdkVersion 36
+
+        externalNativeBuild {
+            cmake {
+                arguments "-DANDROID_STL=none"
+            }
+        }
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.1'
+    externalNativeBuild {
+        cmake {
+            path 'CMakeLists.txt'
+        }
+    }
+    buildFeatures {
+        prefab true
+    }
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+    packagingOptions {
+        exclude "**/libdlfunc.so"
     }
 }
 
-allprojects {
-    repositories {
-        jcenter()
-        google()
-        mavenCentral()
-    }
+dependencies {
+    implementation 'io.github.rk700:dlfunc:0.1.0'
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}

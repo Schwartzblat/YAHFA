@@ -1,5 +1,11 @@
 YAHFA
 ----------------
+This fork is meant you be used as a git submodule.
+
+```
+git submodule add 
+```י
+
 
 [![Build Status](https://github.com/PAGalaxyLab/YAHFA/workflows/Android%20CI/badge.svg)](https://github.com/PAGalaxyLab/YAHFA/actions)
 [![Download](https://badgen.net/github/release/PAGalaxyLab/YAHFA)](https://github.com/PAGalaxyLab/YAHFA/releases/latest/download/library-release.aar)

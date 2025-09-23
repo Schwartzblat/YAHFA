@@ -8,3 +8,4 @@
 .externalNativeBuild
 *.swp
 *.aar
+*.cxx
